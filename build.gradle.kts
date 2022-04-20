@@ -21,6 +21,7 @@ version = properties("pluginVersion")
 
 // Configure project's dependencies
 repositories {
+    mavenLocal() //优先使用本地仓库依赖
     mavenCentral()
 }
 

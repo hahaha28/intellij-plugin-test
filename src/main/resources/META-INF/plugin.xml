@@ -9,10 +9,18 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.hahaha28.intellijplugintest.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.hahaha28.intellijplugintest.services.MyProjectService"/>
+        <toolWindow factoryClass="com.github.hahaha28.intellijplugintest.window.TestWindowFactory" id="Test Window" secondary="true"
+                    anchor="right" icon="AllIcons.General.Modified"/>
     </extensions>
 
     <applicationListeners>
         <listener class="com.github.hahaha28.intellijplugintest.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="test_action" class="com.github.hahaha28.intellijplugintest.TestAction2" text="TestAction"
+                description="test">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
